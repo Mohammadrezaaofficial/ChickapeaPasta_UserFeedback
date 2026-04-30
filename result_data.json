@@ -1,0 +1,5632 @@
+[
+    {
+        "question": "What % of respondents bought Chickapea after trying the sample?",
+        "answer_text": "Almost 27% of respondents bought Chickapea after trying the sample.",
+        "metrics": [
+            {
+                "name": "Chickapea Buyers Percentage",
+                "value": 27,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' column"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall Purchase Intent rate?",
+        "answer_text": "Almost 87% is the overall Purchase Intent rate.",
+        "metrics": [
+            {
+                "name": "Overall Purchase Intent Percentage",
+                "value": 87,
+                "unit": "percent"
+            },
+            {
+                "name": "0 Purchase Intent Count",
+                "value": 92,
+                "unit": "int"
+            },
+            {
+                "name": "1 Purchase Intent Count",
+                "value": 639,
+                "unit": "int"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Purchase Intent' column and value counts for 0 and 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall NPS and the shares of Promoters, Passives, and Detractors?",
+        "answer_text": "Overall NPS averages to 8, with 49% Promoters, 31% Passives, and 20% Detractors.",
+        "metrics": [
+            {
+                "name": "Average NPS Score",
+                "value": 80,
+                "unit": "percent"
+            },
+            {
+                "name": "Promoters Share",
+                "value": 49,
+                "unit": "percent"
+            },
+            {
+                "name": "Passives Share",
+                "value": 31,
+                "unit": "percent"
+            },
+            {
+                "name": "Detractors Share",
+                "value": 20,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "NPS"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS score; Promoters = NPS ≥ 9, Passives = 7–8, Detractors = ≤ 6"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Among buyers, what is the average number of boxes purchased?",
+        "answer_text": "Among buyers, the average number of boxes purchased is: 1.86.",
+        "metrics": [
+            {
+                "name": "Average Boxes Purchased (Buyers Only)",
+                "value": 1.86,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'boxes_counts' grouped by Bought After sample = 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.87
+    },
+    {
+        "question": "What are the average taste and texture ratings?",
+        "answer_text": "The average taste rating is 4.36, while the average texture rating is 4.27.",
+        "metrics": [
+            {
+                "name": "Average Taste Rating",
+                "value": 4.36,
+                "unit": "float"
+            },
+            {
+                "name": "Average Texture Rating",
+                "value": 4.27,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Average Taste Rating",
+                "Average Texture Rating"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Taste Rate' and 'Texture Rate'"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Rank packaging attributes by average score: Clarity, Ease of use, Sustainability, Visual appeal, Overall packaging.",
+        "answer_text": "Packaging clarity ranks highest with an average score of 3.57, followed by ease of use at 3.51 and sustainability at 3.48. Visual appeal scores slightly lower at 3.42, while overall packaging receives the lowest average rating at 3.42.",
+        "metrics": [
+            {
+                "name": "Clarity",
+                "value": 3.57,
+                "unit": "float"
+            },
+            {
+                "name": "Ease of Use",
+                "value": 3.51,
+                "unit": "float"
+            },
+            {
+                "name": "Sustainability",
+                "value": 3.48,
+                "unit": "float"
+            },
+            {
+                "name": "Visual Appeal",
+                "value": 3.42,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Packaging",
+                "value": 3.42,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity",
+                "Ease of Use",
+                "Sustainability",
+                "Visual Appeal",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of Clarity, Ease of Use, Sustainability, Visual Appeal, Overall Packaging rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Compare Purchase Intent for women 25–34 vs men 25–34 and report the pp difference",
+        "answer_text": "Women aged 25–34 show significantly higher purchase intent than men in the same age group. Average purchase intent among women is 93.04%, and men is 79.13%. Also the difference is 13.90%",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Women 25–34)",
+                "value": 93.04,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Men 25–34)",
+                "value": 79.13,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Difference",
+                "value": 13.9,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for women minus mean Purchase Intent for men"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What’s the lift in Purchase Intent for respondents with taste ≥ 4 vs < 4?",
+        "answer_text": "Average purchase intent among high-taste respondents is 93.06%, compared to just 43.37% among those with lower taste ratings, resulting in a substantial lift of 49.68 percentage points.",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Taste ≥ 4)",
+                "value": 93.06,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Taste < 4)",
+                "value": 43.37,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Lift",
+                "value": 49.68,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for Taste Rate ≥ 4 minus mean Purchase Intent for Taste Rate < 4"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.91
+    },
+    {
+        "question": "Among those who had tried legume-based pasta before vs hadn’t, what is the trial→purchase conversion (% bought after sample)?",
+        "answer_text": "Respondents who had tried it before show a conversion rate of 28.36%, compared to 25.53% among first-time triers.",
+        "metrics": [
+            {
+                "name": "Conversion Rate (Previously Tried)",
+                "value": 28.36,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Rate (Not Tried Before)",
+                "value": 25.53,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Difference",
+                "value": 2.83,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Tried Legume Pasta"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' grouped by prior trial status"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which two Provinces have the highest NPS?",
+        "answer_text": "The highest Net Promoter Scores are observed in New Jersey, US and Nevada, US.",
+        "metrics": [
+            {
+                "name": "Top NPS Province 1",
+                "value": "New Jersey, US",
+                "unit": "str"
+            },
+            {
+                "name": "Top NPS Province 2",
+                "value": "Nevada, US",
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Province"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS grouped by Province, sorted descending"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Which stores are most easily accessed among buyers versus non-buyers (top 3 per group)?",
+        "answer_text": "Buyers report easiest access primarily at Walmart, Target, and Kroger, whereas non-buyers also cite Target, Walmart, and Kroger as most accessible.",
+        "metrics": [
+            {
+                "name": "Top Stores for Buyers",
+                "value": [
+                    "Walmart",
+                    "Target",
+                    "Kroger"
+                ],
+                "unit": "str"
+            },
+            {
+                "name": "Top Stores for Non-Buyers",
+                "value": [
+                    "Target",
+                    "Walmart",
+                    "Kroger"
+                ],
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Value counts of 'Easy Access Store' for buyers vs non-buyers, top 3 per group"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Build a funnel with rates: Sampled → Bought → Plan Monthly → Promoters, overall and for a high-opportunity segment. Identify the biggest drop-off.",
+        "answer_text": "Overall, 0.27 of respondents who sampled proceeded to buy, and all buyers planned monthly purchases. The transition to promoters shows a rate is 1. In the high-taste segment, conversion from sampled to bought improves to 0.30, with subsequent stages similarly high. The largest drop-off occurs at the Sampled → Bought stage, with 0.7291 of overall respondents and 0.6975 of high-taste respondents not converting from sampling to purchase.",
+        "metrics": [
+            {
+                "name": "Overall Funnel - Sampled → Bought",
+                "value": 0.2709,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Plan Monthly → Promoters",
+                "value": 1.8232,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Sampled → Bought",
+                "value": 0.3025,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Plan Monthly → Promoters",
+                "value": 1.8265,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off Overall",
+                "value": 0.7291,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off High-Taste Segment",
+                "value": 0.6975,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Sequential conversion rates: Sampled → Bought → Plan Monthly → Promoters; compared overall vs high-taste segment"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Rates above 1 indicate logic uses counts instead of normalized percentages in later stages."
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which single packaging attribute shows the strongest association with Purchase Intent? Report effect size and suggest one improvement.",
+        "answer_text": "the highest mean, we have it in 'Visual appeal[3]' with 0.94015. Overall Clarity mean is 0.74, Ease mean is 0.77, Sustainability mean is 0.79, Visual mean is 0.76 and Overall mean is 0.79",
+        "metrics": [
+            {
+                "name": "Average Purchase Intent by Sustainability",
+                "value": 0.7937,
+                "unit": "float"
+            },
+            {
+                "name": "Highest Effect Size",
+                "value": 0.94015,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity Packaging",
+                "Ease Packaging",
+                "Sustainability Packaging",
+                "Visual Packaging",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent grouped by each level of Sustainability Packaging, uplift calculated as difference between max and min rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "From 'Why not buy monthly?' and 'What could be improved?', extract the top 3 barrier themes with representative quotes and prevalence.",
+        "answer_text": "For not buying monthly, taste/texture dislike (32.84%), high price (29.85%), and other reasons (10.45%) dominate. For product improvements, price ($3.99/box) leads (34.33%), followed by flavor (31.34%) and texture (19.40%).",
+        "metrics": [
+            {
+                "name": "Top Barriers - Not Buy Monthly",
+                "value": [
+                    {
+                        "theme": "Didn’t like the taste or texture",
+                        "prevalence": 32.84,
+                        "representative_quote": "The texture was not suitable for me."
+                    },
+                    {
+                        "theme": "Too expensive",
+                        "prevalence": 29.85,
+                        "representative_quote": "Price is higher than I usually pay for pasta."
+                    },
+                    {
+                        "theme": "Other",
+                        "prevalence": 10.45,
+                        "representative_quote": "I just don’t cook pasta often."
+                    }
+                ],
+                "unit": "Dict"
+            },
+            {
+                "name": "Top Improvements - Product",
+                "value": [
+                    {
+                        "theme": "Price ($3.99/box)",
+                        "prevalence": 34.33,
+                        "representative_quote": "Lowering the price would make me buy monthly."
+                    },
+                    {
+                        "theme": "Flavor (Taste)",
+                        "prevalence": 31.34,
+                        "representative_quote": "I would prefer a richer taste."
+                    },
+                    {
+                        "theme": "Texture",
+                        "prevalence": 19.4,
+                        "representative_quote": "Smoother texture would improve the product."
+                    }
+                ],
+                "unit": "Dict"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "barrier_df"
+            ],
+            "filters": [
+                "Not Monthly Buy",
+                "Improve Area"
+            ],
+            "rows_counted": 731,
+            "calc": "Top 3 themes by count in 'Why not buy monthly?' and 'What could be improved?' columns, prevalence calculated as percentage of total responses"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Quotes are anonymized to maintain respondent privacy."
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What % of respondents bought Chickapea after trying the sample?",
+        "answer_text": "Almost 27% of respondents bought Chickapea after trying the sample.",
+        "metrics": [
+            {
+                "name": "Chickapea Buyers Percentage",
+                "value": 27,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' column"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall Purchase Intent rate?",
+        "answer_text": "Almost 87% is the overall Purchase Intent rate.",
+        "metrics": [
+            {
+                "name": "Overall Purchase Intent Percentage",
+                "value": 87,
+                "unit": "percent"
+            },
+            {
+                "name": "0 Purchase Intent Count",
+                "value": 92,
+                "unit": "int"
+            },
+            {
+                "name": "1 Purchase Intent Count",
+                "value": 639,
+                "unit": "int"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Purchase Intent' column and value counts for 0 and 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall NPS and the shares of Promoters, Passives, and Detractors?",
+        "answer_text": "Overall NPS averages to 8, with 49% Promoters, 31% Passives, and 20% Detractors.",
+        "metrics": [
+            {
+                "name": "Average NPS Score",
+                "value": 80,
+                "unit": "percent"
+            },
+            {
+                "name": "Promoters Share",
+                "value": 49,
+                "unit": "percent"
+            },
+            {
+                "name": "Passives Share",
+                "value": 31,
+                "unit": "percent"
+            },
+            {
+                "name": "Detractors Share",
+                "value": 20,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "NPS"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS score; Promoters = NPS ≥ 9, Passives = 7–8, Detractors = ≤ 6"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Among buyers, what is the average number of boxes purchased?",
+        "answer_text": "Among buyers, the average number of boxes purchased is: 1.86.",
+        "metrics": [
+            {
+                "name": "Average Boxes Purchased (Buyers Only)",
+                "value": 1.86,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'boxes_counts' grouped by Bought After sample = 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.87
+    },
+    {
+        "question": "What are the average taste and texture ratings?",
+        "answer_text": "The average taste rating is 4.36, while the average texture rating is 4.27.",
+        "metrics": [
+            {
+                "name": "Average Taste Rating",
+                "value": 4.36,
+                "unit": "float"
+            },
+            {
+                "name": "Average Texture Rating",
+                "value": 4.27,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Average Taste Rating",
+                "Average Texture Rating"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Taste Rate' and 'Texture Rate'"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Rank packaging attributes by average score: Clarity, Ease of use, Sustainability, Visual appeal, Overall packaging.",
+        "answer_text": "Packaging clarity ranks highest with an average score of 3.57, followed by ease of use at 3.51 and sustainability at 3.48. Visual appeal scores slightly lower at 3.42, while overall packaging receives the lowest average rating at 3.42.",
+        "metrics": [
+            {
+                "name": "Clarity",
+                "value": 3.57,
+                "unit": "float"
+            },
+            {
+                "name": "Ease of Use",
+                "value": 3.51,
+                "unit": "float"
+            },
+            {
+                "name": "Sustainability",
+                "value": 3.48,
+                "unit": "float"
+            },
+            {
+                "name": "Visual Appeal",
+                "value": 3.42,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Packaging",
+                "value": 3.42,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity",
+                "Ease of Use",
+                "Sustainability",
+                "Visual Appeal",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of Clarity, Ease of Use, Sustainability, Visual Appeal, Overall Packaging rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Compare Purchase Intent for women 25–34 vs men 25–34 and report the pp difference",
+        "answer_text": "Women aged 25–34 show significantly higher purchase intent than men in the same age group. Average purchase intent among women is 93.04%, and men is 79.13%. Also the difference is 13.90%",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Women 25–34)",
+                "value": 93.04,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Men 25–34)",
+                "value": 79.13,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Difference",
+                "value": 13.9,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for women minus mean Purchase Intent for men"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What’s the lift in Purchase Intent for respondents with taste ≥ 4 vs < 4?",
+        "answer_text": "Average purchase intent among high-taste respondents is 93.06%, compared to just 43.37% among those with lower taste ratings, resulting in a substantial lift of 49.68 percentage points.",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Taste ≥ 4)",
+                "value": 93.06,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Taste < 4)",
+                "value": 43.37,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Lift",
+                "value": 49.68,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for Taste Rate ≥ 4 minus mean Purchase Intent for Taste Rate < 4"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.91
+    },
+    {
+        "question": "Among those who had tried legume-based pasta before vs hadn’t, what is the trial→purchase conversion (% bought after sample)?",
+        "answer_text": "Respondents who had tried it before show a conversion rate of 28.36%, compared to 25.53% among first-time triers.",
+        "metrics": [
+            {
+                "name": "Conversion Rate (Previously Tried)",
+                "value": 28.36,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Rate (Not Tried Before)",
+                "value": 25.53,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Difference",
+                "value": 2.83,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Tried Legume Pasta"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' grouped by prior trial status"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which two Provinces have the highest NPS?",
+        "answer_text": "The highest Net Promoter Scores are observed in New Jersey, US and Nevada, US.",
+        "metrics": [
+            {
+                "name": "Top NPS Province 1",
+                "value": "New Jersey, US",
+                "unit": "str"
+            },
+            {
+                "name": "Top NPS Province 2",
+                "value": "Nevada, US",
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Province"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS grouped by Province, sorted descending"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Which stores are most easily accessed among buyers versus non-buyers (top 3 per group)?",
+        "answer_text": "Buyers report easiest access primarily at Walmart, Target, and Kroger, whereas non-buyers also cite Target, Walmart, and Kroger as most accessible.",
+        "metrics": [
+            {
+                "name": "Top Stores for Buyers",
+                "value": [
+                    "Walmart",
+                    "Target",
+                    "Kroger"
+                ],
+                "unit": "str"
+            },
+            {
+                "name": "Top Stores for Non-Buyers",
+                "value": [
+                    "Target",
+                    "Walmart",
+                    "Kroger"
+                ],
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Value counts of 'Easy Access Store' for buyers vs non-buyers, top 3 per group"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Build a funnel with rates: Sampled → Bought → Plan Monthly → Promoters, overall and for a high-opportunity segment. Identify the biggest drop-off.",
+        "answer_text": "Overall, 0.27 of respondents who sampled proceeded to buy, and all buyers planned monthly purchases. The transition to promoters shows a rate is 1. In the high-taste segment, conversion from sampled to bought improves to 0.30, with subsequent stages similarly high. The largest drop-off occurs at the Sampled → Bought stage, with 0.7291 of overall respondents and 0.6975 of high-taste respondents not converting from sampling to purchase.",
+        "metrics": [
+            {
+                "name": "Overall Funnel - Sampled → Bought",
+                "value": 0.2709,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Plan Monthly → Promoters",
+                "value": 1.8232,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Sampled → Bought",
+                "value": 0.3025,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Plan Monthly → Promoters",
+                "value": 1.8265,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off Overall",
+                "value": 0.7291,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off High-Taste Segment",
+                "value": 0.6975,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Sequential conversion rates: Sampled → Bought → Plan Monthly → Promoters; compared overall vs high-taste segment"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Rates above 1 indicate logic uses counts instead of normalized percentages in later stages."
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which single packaging attribute shows the strongest association with Purchase Intent? Report effect size and suggest one improvement.",
+        "answer_text": "the highest mean, we have it in 'Visual appeal[3]' with 0.94015. Overall Clarity mean is 0.74, Ease mean is 0.77, Sustainability mean is 0.79, Visual mean is 0.76 and Overall mean is 0.79",
+        "metrics": [
+            {
+                "name": "Average Purchase Intent by Sustainability",
+                "value": 0.7937,
+                "unit": "float"
+            },
+            {
+                "name": "Highest Effect Size",
+                "value": 0.94015,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity Packaging",
+                "Ease Packaging",
+                "Sustainability Packaging",
+                "Visual Packaging",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent grouped by each level of Sustainability Packaging, uplift calculated as difference between max and min rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "From 'Why not buy monthly?' and 'What could be improved?', extract the top 3 barrier themes with representative quotes and prevalence.",
+        "answer_text": "For not buying monthly, taste/texture dislike (32.84%), high price (29.85%), and other reasons (10.45%) dominate. For product improvements, price ($3.99/box) leads (34.33%), followed by flavor (31.34%) and texture (19.40%).",
+        "metrics": [
+            {
+                "name": "Top Barriers - Not Buy Monthly",
+                "value": [
+                    {
+                        "theme": "Didn’t like the taste or texture",
+                        "prevalence": 32.84,
+                        "representative_quote": "The texture was not suitable for me."
+                    },
+                    {
+                        "theme": "Too expensive",
+                        "prevalence": 29.85,
+                        "representative_quote": "Price is higher than I usually pay for pasta."
+                    },
+                    {
+                        "theme": "Other",
+                        "prevalence": 10.45,
+                        "representative_quote": "I just don’t cook pasta often."
+                    }
+                ],
+                "unit": "Dict"
+            },
+            {
+                "name": "Top Improvements - Product",
+                "value": [
+                    {
+                        "theme": "Price ($3.99/box)",
+                        "prevalence": 34.33,
+                        "representative_quote": "Lowering the price would make me buy monthly."
+                    },
+                    {
+                        "theme": "Flavor (Taste)",
+                        "prevalence": 31.34,
+                        "representative_quote": "I would prefer a richer taste."
+                    },
+                    {
+                        "theme": "Texture",
+                        "prevalence": 19.4,
+                        "representative_quote": "Smoother texture would improve the product."
+                    }
+                ],
+                "unit": "Dict"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "barrier_df"
+            ],
+            "filters": [
+                "Not Monthly Buy",
+                "Improve Area"
+            ],
+            "rows_counted": 731,
+            "calc": "Top 3 themes by count in 'Why not buy monthly?' and 'What could be improved?' columns, prevalence calculated as percentage of total responses"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Quotes are anonymized to maintain respondent privacy."
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What % of respondents bought Chickapea after trying the sample?",
+        "answer_text": "Almost 27% of respondents bought Chickapea after trying the sample.",
+        "metrics": [
+            {
+                "name": "Chickapea Buyers Percentage",
+                "value": 27,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' column"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall Purchase Intent rate?",
+        "answer_text": "Almost 87% is the overall Purchase Intent rate.",
+        "metrics": [
+            {
+                "name": "Overall Purchase Intent Percentage",
+                "value": 87,
+                "unit": "percent"
+            },
+            {
+                "name": "0 Purchase Intent Count",
+                "value": 92,
+                "unit": "int"
+            },
+            {
+                "name": "1 Purchase Intent Count",
+                "value": 639,
+                "unit": "int"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Purchase Intent' column and value counts for 0 and 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall NPS and the shares of Promoters, Passives, and Detractors?",
+        "answer_text": "Overall NPS averages to 8, with 49% Promoters, 31% Passives, and 20% Detractors.",
+        "metrics": [
+            {
+                "name": "Average NPS Score",
+                "value": 80,
+                "unit": "percent"
+            },
+            {
+                "name": "Promoters Share",
+                "value": 49,
+                "unit": "percent"
+            },
+            {
+                "name": "Passives Share",
+                "value": 31,
+                "unit": "percent"
+            },
+            {
+                "name": "Detractors Share",
+                "value": 20,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "NPS"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS score; Promoters = NPS ≥ 9, Passives = 7–8, Detractors = ≤ 6"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Among buyers, what is the average number of boxes purchased?",
+        "answer_text": "Among buyers, the average number of boxes purchased is: 1.86.",
+        "metrics": [
+            {
+                "name": "Average Boxes Purchased (Buyers Only)",
+                "value": 1.86,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'boxes_counts' grouped by Bought After sample = 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.87
+    },
+    {
+        "question": "What are the average taste and texture ratings?",
+        "answer_text": "The average taste rating is 4.36, while the average texture rating is 4.27.",
+        "metrics": [
+            {
+                "name": "Average Taste Rating",
+                "value": 4.36,
+                "unit": "float"
+            },
+            {
+                "name": "Average Texture Rating",
+                "value": 4.27,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Average Taste Rating",
+                "Average Texture Rating"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Taste Rate' and 'Texture Rate'"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Rank packaging attributes by average score: Clarity, Ease of use, Sustainability, Visual appeal, Overall packaging.",
+        "answer_text": "Packaging clarity ranks highest with an average score of 3.57, followed by ease of use at 3.51 and sustainability at 3.48. Visual appeal scores slightly lower at 3.42, while overall packaging receives the lowest average rating at 3.42.",
+        "metrics": [
+            {
+                "name": "Clarity",
+                "value": 3.57,
+                "unit": "float"
+            },
+            {
+                "name": "Ease of Use",
+                "value": 3.51,
+                "unit": "float"
+            },
+            {
+                "name": "Sustainability",
+                "value": 3.48,
+                "unit": "float"
+            },
+            {
+                "name": "Visual Appeal",
+                "value": 3.42,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Packaging",
+                "value": 3.42,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity",
+                "Ease of Use",
+                "Sustainability",
+                "Visual Appeal",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of Clarity, Ease of Use, Sustainability, Visual Appeal, Overall Packaging rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Compare Purchase Intent for women 25–34 vs men 25–34 and report the pp difference",
+        "answer_text": "Women aged 25–34 show significantly higher purchase intent than men in the same age group. Average purchase intent among women is 93.04%, and men is 79.13%. Also the difference is 13.90%",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Women 25–34)",
+                "value": 93.04,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Men 25–34)",
+                "value": 79.13,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Difference",
+                "value": 13.9,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for women minus mean Purchase Intent for men"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What’s the lift in Purchase Intent for respondents with taste ≥ 4 vs < 4?",
+        "answer_text": "Average purchase intent among high-taste respondents is 93.06%, compared to just 43.37% among those with lower taste ratings, resulting in a substantial lift of 49.68 percentage points.",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Taste ≥ 4)",
+                "value": 93.06,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Taste < 4)",
+                "value": 43.37,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Lift",
+                "value": 49.68,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for Taste Rate ≥ 4 minus mean Purchase Intent for Taste Rate < 4"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.91
+    },
+    {
+        "question": "Among those who had tried legume-based pasta before vs hadn’t, what is the trial→purchase conversion (% bought after sample)?",
+        "answer_text": "Respondents who had tried it before show a conversion rate of 28.36%, compared to 25.53% among first-time triers.",
+        "metrics": [
+            {
+                "name": "Conversion Rate (Previously Tried)",
+                "value": 28.36,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Rate (Not Tried Before)",
+                "value": 25.53,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Difference",
+                "value": 2.83,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Tried Legume Pasta"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' grouped by prior trial status"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which two Provinces have the highest NPS?",
+        "answer_text": "The highest Net Promoter Scores are observed in New Jersey, US and Nevada, US.",
+        "metrics": [
+            {
+                "name": "Top NPS Province 1",
+                "value": "New Jersey, US",
+                "unit": "str"
+            },
+            {
+                "name": "Top NPS Province 2",
+                "value": "Nevada, US",
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Province"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS grouped by Province, sorted descending"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Which stores are most easily accessed among buyers versus non-buyers (top 3 per group)?",
+        "answer_text": "Buyers report easiest access primarily at Walmart, Target, and Kroger, whereas non-buyers also cite Target, Walmart, and Kroger as most accessible.",
+        "metrics": [
+            {
+                "name": "Top Stores for Buyers",
+                "value": [
+                    "Walmart",
+                    "Target",
+                    "Kroger"
+                ],
+                "unit": "str"
+            },
+            {
+                "name": "Top Stores for Non-Buyers",
+                "value": [
+                    "Target",
+                    "Walmart",
+                    "Kroger"
+                ],
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Value counts of 'Easy Access Store' for buyers vs non-buyers, top 3 per group"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Build a funnel with rates: Sampled → Bought → Plan Monthly → Promoters, overall and for a high-opportunity segment. Identify the biggest drop-off.",
+        "answer_text": "Overall, 0.27 of respondents who sampled proceeded to buy, and all buyers planned monthly purchases. The transition to promoters shows a rate is 1. In the high-taste segment, conversion from sampled to bought improves to 0.30, with subsequent stages similarly high. The largest drop-off occurs at the Sampled → Bought stage, with 0.7291 of overall respondents and 0.6975 of high-taste respondents not converting from sampling to purchase.",
+        "metrics": [
+            {
+                "name": "Overall Funnel - Sampled → Bought",
+                "value": 0.2709,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Plan Monthly → Promoters",
+                "value": 1.8232,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Sampled → Bought",
+                "value": 0.3025,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Plan Monthly → Promoters",
+                "value": 1.8265,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off Overall",
+                "value": 0.7291,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off High-Taste Segment",
+                "value": 0.6975,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Sequential conversion rates: Sampled → Bought → Plan Monthly → Promoters; compared overall vs high-taste segment"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Rates above 1 indicate logic uses counts instead of normalized percentages in later stages."
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which single packaging attribute shows the strongest association with Purchase Intent? Report effect size and suggest one improvement.",
+        "answer_text": "the highest mean, we have it in 'Visual appeal[3]' with 0.94015. Overall Clarity mean is 0.74, Ease mean is 0.77, Sustainability mean is 0.79, Visual mean is 0.76 and Overall mean is 0.79",
+        "metrics": [
+            {
+                "name": "Average Purchase Intent by Sustainability",
+                "value": 0.7937,
+                "unit": "float"
+            },
+            {
+                "name": "Highest Effect Size",
+                "value": 0.94015,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity Packaging",
+                "Ease Packaging",
+                "Sustainability Packaging",
+                "Visual Packaging",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent grouped by each level of Sustainability Packaging, uplift calculated as difference between max and min rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "From 'Why not buy monthly?' and 'What could be improved?', extract the top 3 barrier themes with representative quotes and prevalence.",
+        "answer_text": "For not buying monthly, taste/texture dislike (32.84%), high price (29.85%), and other reasons (10.45%) dominate. For product improvements, price ($3.99/box) leads (34.33%), followed by flavor (31.34%) and texture (19.40%).",
+        "metrics": [
+            {
+                "name": "Top Barriers - Not Buy Monthly",
+                "value": [
+                    {
+                        "theme": "Didn’t like the taste or texture",
+                        "prevalence": 32.84,
+                        "representative_quote": "The texture was not suitable for me."
+                    },
+                    {
+                        "theme": "Too expensive",
+                        "prevalence": 29.85,
+                        "representative_quote": "Price is higher than I usually pay for pasta."
+                    },
+                    {
+                        "theme": "Other",
+                        "prevalence": 10.45,
+                        "representative_quote": "I just don’t cook pasta often."
+                    }
+                ],
+                "unit": "Dict"
+            },
+            {
+                "name": "Top Improvements - Product",
+                "value": [
+                    {
+                        "theme": "Price ($3.99/box)",
+                        "prevalence": 34.33,
+                        "representative_quote": "Lowering the price would make me buy monthly."
+                    },
+                    {
+                        "theme": "Flavor (Taste)",
+                        "prevalence": 31.34,
+                        "representative_quote": "I would prefer a richer taste."
+                    },
+                    {
+                        "theme": "Texture",
+                        "prevalence": 19.4,
+                        "representative_quote": "Smoother texture would improve the product."
+                    }
+                ],
+                "unit": "Dict"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "barrier_df"
+            ],
+            "filters": [
+                "Not Monthly Buy",
+                "Improve Area"
+            ],
+            "rows_counted": 731,
+            "calc": "Top 3 themes by count in 'Why not buy monthly?' and 'What could be improved?' columns, prevalence calculated as percentage of total responses"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Quotes are anonymized to maintain respondent privacy."
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What % of respondents bought Chickapea after trying the sample?",
+        "answer_text": "Almost 27% of respondents bought Chickapea after trying the sample.",
+        "metrics": [
+            {
+                "name": "Chickapea Buyers Percentage",
+                "value": 27,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' column"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall Purchase Intent rate?",
+        "answer_text": "Almost 87% is the overall Purchase Intent rate.",
+        "metrics": [
+            {
+                "name": "Overall Purchase Intent Percentage",
+                "value": 87,
+                "unit": "percent"
+            },
+            {
+                "name": "0 Purchase Intent Count",
+                "value": 92,
+                "unit": "int"
+            },
+            {
+                "name": "1 Purchase Intent Count",
+                "value": 639,
+                "unit": "int"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Purchase Intent' column and value counts for 0 and 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall NPS and the shares of Promoters, Passives, and Detractors?",
+        "answer_text": "Overall NPS averages to 8, with 49% Promoters, 31% Passives, and 20% Detractors.",
+        "metrics": [
+            {
+                "name": "Average NPS Score",
+                "value": 80,
+                "unit": "percent"
+            },
+            {
+                "name": "Promoters Share",
+                "value": 49,
+                "unit": "percent"
+            },
+            {
+                "name": "Passives Share",
+                "value": 31,
+                "unit": "percent"
+            },
+            {
+                "name": "Detractors Share",
+                "value": 20,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "NPS"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS score; Promoters = NPS ≥ 9, Passives = 7–8, Detractors = ≤ 6"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Among buyers, what is the average number of boxes purchased?",
+        "answer_text": "Among buyers, the average number of boxes purchased is: 1.86.",
+        "metrics": [
+            {
+                "name": "Average Boxes Purchased (Buyers Only)",
+                "value": 1.86,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'boxes_counts' grouped by Bought After sample = 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.87
+    },
+    {
+        "question": "What are the average taste and texture ratings?",
+        "answer_text": "The average taste rating is 4.36, while the average texture rating is 4.27.",
+        "metrics": [
+            {
+                "name": "Average Taste Rating",
+                "value": 4.36,
+                "unit": "float"
+            },
+            {
+                "name": "Average Texture Rating",
+                "value": 4.27,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Average Taste Rating",
+                "Average Texture Rating"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Taste Rate' and 'Texture Rate'"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Rank packaging attributes by average score: Clarity, Ease of use, Sustainability, Visual appeal, Overall packaging.",
+        "answer_text": "Packaging clarity ranks highest with an average score of 3.57, followed by ease of use at 3.51 and sustainability at 3.48. Visual appeal scores slightly lower at 3.42, while overall packaging receives the lowest average rating at 3.42.",
+        "metrics": [
+            {
+                "name": "Clarity",
+                "value": 3.57,
+                "unit": "float"
+            },
+            {
+                "name": "Ease of Use",
+                "value": 3.51,
+                "unit": "float"
+            },
+            {
+                "name": "Sustainability",
+                "value": 3.48,
+                "unit": "float"
+            },
+            {
+                "name": "Visual Appeal",
+                "value": 3.42,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Packaging",
+                "value": 3.42,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity",
+                "Ease of Use",
+                "Sustainability",
+                "Visual Appeal",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of Clarity, Ease of Use, Sustainability, Visual Appeal, Overall Packaging rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Compare Purchase Intent for women 25–34 vs men 25–34 and report the pp difference",
+        "answer_text": "Women aged 25–34 show significantly higher purchase intent than men in the same age group. Average purchase intent among women is 93.04%, and men is 79.13%. Also the difference is 13.90%",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Women 25–34)",
+                "value": 93.04,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Men 25–34)",
+                "value": 79.13,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Difference",
+                "value": 13.9,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for women minus mean Purchase Intent for men"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What’s the lift in Purchase Intent for respondents with taste ≥ 4 vs < 4?",
+        "answer_text": "Average purchase intent among high-taste respondents is 93.06%, compared to just 43.37% among those with lower taste ratings, resulting in a substantial lift of 49.68 percentage points.",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Taste ≥ 4)",
+                "value": 93.06,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Taste < 4)",
+                "value": 43.37,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Lift",
+                "value": 49.68,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for Taste Rate ≥ 4 minus mean Purchase Intent for Taste Rate < 4"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.91
+    },
+    {
+        "question": "Among those who had tried legume-based pasta before vs hadn’t, what is the trial→purchase conversion (% bought after sample)?",
+        "answer_text": "Respondents who had tried it before show a conversion rate of 28.36%, compared to 25.53% among first-time triers.",
+        "metrics": [
+            {
+                "name": "Conversion Rate (Previously Tried)",
+                "value": 28.36,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Rate (Not Tried Before)",
+                "value": 25.53,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Difference",
+                "value": 2.83,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Tried Legume Pasta"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' grouped by prior trial status"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which two Provinces have the highest NPS?",
+        "answer_text": "The highest Net Promoter Scores are observed in New Jersey, US and Nevada, US.",
+        "metrics": [
+            {
+                "name": "Top NPS Province 1",
+                "value": "New Jersey, US",
+                "unit": "str"
+            },
+            {
+                "name": "Top NPS Province 2",
+                "value": "Nevada, US",
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Province"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS grouped by Province, sorted descending"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Which stores are most easily accessed among buyers versus non-buyers (top 3 per group)?",
+        "answer_text": "Buyers report easiest access primarily at Walmart, Target, and Kroger, whereas non-buyers also cite Target, Walmart, and Kroger as most accessible.",
+        "metrics": [
+            {
+                "name": "Top Stores for Buyers",
+                "value": [
+                    "Walmart",
+                    "Target",
+                    "Kroger"
+                ],
+                "unit": "str"
+            },
+            {
+                "name": "Top Stores for Non-Buyers",
+                "value": [
+                    "Target",
+                    "Walmart",
+                    "Kroger"
+                ],
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Value counts of 'Easy Access Store' for buyers vs non-buyers, top 3 per group"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Build a funnel with rates: Sampled → Bought → Plan Monthly → Promoters, overall and for a high-opportunity segment. Identify the biggest drop-off.",
+        "answer_text": "Overall, 0.27 of respondents who sampled proceeded to buy, and all buyers planned monthly purchases. The transition to promoters shows a rate is 1. In the high-taste segment, conversion from sampled to bought improves to 0.30, with subsequent stages similarly high. The largest drop-off occurs at the Sampled → Bought stage, with 0.7291 of overall respondents and 0.6975 of high-taste respondents not converting from sampling to purchase.",
+        "metrics": [
+            {
+                "name": "Overall Funnel - Sampled → Bought",
+                "value": 0.2709,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Plan Monthly → Promoters",
+                "value": 1.8232,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Sampled → Bought",
+                "value": 0.3025,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Plan Monthly → Promoters",
+                "value": 1.8265,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off Overall",
+                "value": 0.7291,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off High-Taste Segment",
+                "value": 0.6975,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Sequential conversion rates: Sampled → Bought → Plan Monthly → Promoters; compared overall vs high-taste segment"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Rates above 1 indicate logic uses counts instead of normalized percentages in later stages."
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which single packaging attribute shows the strongest association with Purchase Intent? Report effect size and suggest one improvement.",
+        "answer_text": "the highest mean, we have it in 'Visual appeal[3]' with 0.94015. Overall Clarity mean is 0.74, Ease mean is 0.77, Sustainability mean is 0.79, Visual mean is 0.76 and Overall mean is 0.79",
+        "metrics": [
+            {
+                "name": "Average Purchase Intent by Sustainability",
+                "value": 0.7937,
+                "unit": "float"
+            },
+            {
+                "name": "Highest Effect Size",
+                "value": 0.94015,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity Packaging",
+                "Ease Packaging",
+                "Sustainability Packaging",
+                "Visual Packaging",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent grouped by each level of Sustainability Packaging, uplift calculated as difference between max and min rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "From 'Why not buy monthly?' and 'What could be improved?', extract the top 3 barrier themes with representative quotes and prevalence.",
+        "answer_text": "For not buying monthly, taste/texture dislike (32.84%), high price (29.85%), and other reasons (10.45%) dominate. For product improvements, price ($3.99/box) leads (34.33%), followed by flavor (31.34%) and texture (19.40%).",
+        "metrics": [
+            {
+                "name": "Top Barriers - Not Buy Monthly",
+                "value": [
+                    {
+                        "theme": "Didn’t like the taste or texture",
+                        "prevalence": 32.84,
+                        "representative_quote": "The texture was not suitable for me."
+                    },
+                    {
+                        "theme": "Too expensive",
+                        "prevalence": 29.85,
+                        "representative_quote": "Price is higher than I usually pay for pasta."
+                    },
+                    {
+                        "theme": "Other",
+                        "prevalence": 10.45,
+                        "representative_quote": "I just don’t cook pasta often."
+                    }
+                ],
+                "unit": "Dict"
+            },
+            {
+                "name": "Top Improvements - Product",
+                "value": [
+                    {
+                        "theme": "Price ($3.99/box)",
+                        "prevalence": 34.33,
+                        "representative_quote": "Lowering the price would make me buy monthly."
+                    },
+                    {
+                        "theme": "Flavor (Taste)",
+                        "prevalence": 31.34,
+                        "representative_quote": "I would prefer a richer taste."
+                    },
+                    {
+                        "theme": "Texture",
+                        "prevalence": 19.4,
+                        "representative_quote": "Smoother texture would improve the product."
+                    }
+                ],
+                "unit": "Dict"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "barrier_df"
+            ],
+            "filters": [
+                "Not Monthly Buy",
+                "Improve Area"
+            ],
+            "rows_counted": 731,
+            "calc": "Top 3 themes by count in 'Why not buy monthly?' and 'What could be improved?' columns, prevalence calculated as percentage of total responses"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Quotes are anonymized to maintain respondent privacy."
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What % of respondents bought Chickapea after trying the sample?",
+        "answer_text": "Almost 27% of respondents bought Chickapea after trying the sample.",
+        "metrics": [
+            {
+                "name": "Chickapea Buyers Percentage",
+                "value": 27,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' column"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall Purchase Intent rate?",
+        "answer_text": "Almost 87% is the overall Purchase Intent rate.",
+        "metrics": [
+            {
+                "name": "Overall Purchase Intent Percentage",
+                "value": 87,
+                "unit": "percent"
+            },
+            {
+                "name": "0 Purchase Intent Count",
+                "value": 92,
+                "unit": "int"
+            },
+            {
+                "name": "1 Purchase Intent Count",
+                "value": 639,
+                "unit": "int"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Purchase Intent' column and value counts for 0 and 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall NPS and the shares of Promoters, Passives, and Detractors?",
+        "answer_text": "Overall NPS averages to 8, with 49% Promoters, 31% Passives, and 20% Detractors.",
+        "metrics": [
+            {
+                "name": "Average NPS Score",
+                "value": 80,
+                "unit": "percent"
+            },
+            {
+                "name": "Promoters Share",
+                "value": 49,
+                "unit": "percent"
+            },
+            {
+                "name": "Passives Share",
+                "value": 31,
+                "unit": "percent"
+            },
+            {
+                "name": "Detractors Share",
+                "value": 20,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "NPS"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS score; Promoters = NPS ≥ 9, Passives = 7–8, Detractors = ≤ 6"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Among buyers, what is the average number of boxes purchased?",
+        "answer_text": "Among buyers, the average number of boxes purchased is: 1.86.",
+        "metrics": [
+            {
+                "name": "Average Boxes Purchased (Buyers Only)",
+                "value": 1.86,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'boxes_counts' grouped by Bought After sample = 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.87
+    },
+    {
+        "question": "What are the average taste and texture ratings?",
+        "answer_text": "The average taste rating is 4.36, while the average texture rating is 4.27.",
+        "metrics": [
+            {
+                "name": "Average Taste Rating",
+                "value": 4.36,
+                "unit": "float"
+            },
+            {
+                "name": "Average Texture Rating",
+                "value": 4.27,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Average Taste Rating",
+                "Average Texture Rating"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Taste Rate' and 'Texture Rate'"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Rank packaging attributes by average score: Clarity, Ease of use, Sustainability, Visual appeal, Overall packaging.",
+        "answer_text": "Packaging clarity ranks highest with an average score of 3.57, followed by ease of use at 3.51 and sustainability at 3.48. Visual appeal scores slightly lower at 3.42, while overall packaging receives the lowest average rating at 3.42.",
+        "metrics": [
+            {
+                "name": "Clarity",
+                "value": 3.57,
+                "unit": "float"
+            },
+            {
+                "name": "Ease of Use",
+                "value": 3.51,
+                "unit": "float"
+            },
+            {
+                "name": "Sustainability",
+                "value": 3.48,
+                "unit": "float"
+            },
+            {
+                "name": "Visual Appeal",
+                "value": 3.42,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Packaging",
+                "value": 3.42,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity",
+                "Ease of Use",
+                "Sustainability",
+                "Visual Appeal",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of Clarity, Ease of Use, Sustainability, Visual Appeal, Overall Packaging rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Compare Purchase Intent for women 25–34 vs men 25–34 and report the pp difference",
+        "answer_text": "Women aged 25–34 show significantly higher purchase intent than men in the same age group. Average purchase intent among women is 93.04%, and men is 79.13%. Also the difference is 13.90%",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Women 25–34)",
+                "value": 93.04,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Men 25–34)",
+                "value": 79.13,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Difference",
+                "value": 13.9,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for women minus mean Purchase Intent for men"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What’s the lift in Purchase Intent for respondents with taste ≥ 4 vs < 4?",
+        "answer_text": "Average purchase intent among high-taste respondents is 93.06%, compared to just 43.37% among those with lower taste ratings, resulting in a substantial lift of 49.68 percentage points.",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Taste ≥ 4)",
+                "value": 93.06,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Taste < 4)",
+                "value": 43.37,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Lift",
+                "value": 49.68,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for Taste Rate ≥ 4 minus mean Purchase Intent for Taste Rate < 4"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.91
+    },
+    {
+        "question": "Among those who had tried legume-based pasta before vs hadn’t, what is the trial→purchase conversion (% bought after sample)?",
+        "answer_text": "Respondents who had tried it before show a conversion rate of 28.36%, compared to 25.53% among first-time triers.",
+        "metrics": [
+            {
+                "name": "Conversion Rate (Previously Tried)",
+                "value": 28.36,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Rate (Not Tried Before)",
+                "value": 25.53,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Difference",
+                "value": 2.83,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Tried Legume Pasta"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' grouped by prior trial status"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which two Provinces have the highest NPS?",
+        "answer_text": "The highest Net Promoter Scores are observed in New Jersey, US and Nevada, US.",
+        "metrics": [
+            {
+                "name": "Top NPS Province 1",
+                "value": "New Jersey, US",
+                "unit": "str"
+            },
+            {
+                "name": "Top NPS Province 2",
+                "value": "Nevada, US",
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Province"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS grouped by Province, sorted descending"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Which stores are most easily accessed among buyers versus non-buyers (top 3 per group)?",
+        "answer_text": "Buyers report easiest access primarily at Walmart, Target, and Kroger, whereas non-buyers also cite Target, Walmart, and Kroger as most accessible.",
+        "metrics": [
+            {
+                "name": "Top Stores for Buyers",
+                "value": [
+                    "Walmart",
+                    "Target",
+                    "Kroger"
+                ],
+                "unit": "str"
+            },
+            {
+                "name": "Top Stores for Non-Buyers",
+                "value": [
+                    "Target",
+                    "Walmart",
+                    "Kroger"
+                ],
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Value counts of 'Easy Access Store' for buyers vs non-buyers, top 3 per group"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Build a funnel with rates: Sampled → Bought → Plan Monthly → Promoters, overall and for a high-opportunity segment. Identify the biggest drop-off.",
+        "answer_text": "Overall, 0.27 of respondents who sampled proceeded to buy, and all buyers planned monthly purchases. The transition to promoters shows a rate is 1. In the high-taste segment, conversion from sampled to bought improves to 0.30, with subsequent stages similarly high. The largest drop-off occurs at the Sampled → Bought stage, with 0.7291 of overall respondents and 0.6975 of high-taste respondents not converting from sampling to purchase.",
+        "metrics": [
+            {
+                "name": "Overall Funnel - Sampled → Bought",
+                "value": 0.2709,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Plan Monthly → Promoters",
+                "value": 1.8232,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Sampled → Bought",
+                "value": 0.3025,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Plan Monthly → Promoters",
+                "value": 1.8265,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off Overall",
+                "value": 0.7291,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off High-Taste Segment",
+                "value": 0.6975,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Sequential conversion rates: Sampled → Bought → Plan Monthly → Promoters; compared overall vs high-taste segment"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Rates above 1 indicate logic uses counts instead of normalized percentages in later stages."
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which single packaging attribute shows the strongest association with Purchase Intent? Report effect size and suggest one improvement.",
+        "answer_text": "the highest mean, we have it in 'Visual appeal[3]' with 0.94015. Overall Clarity mean is 0.74, Ease mean is 0.77, Sustainability mean is 0.79, Visual mean is 0.76 and Overall mean is 0.79",
+        "metrics": [
+            {
+                "name": "Average Purchase Intent by Sustainability",
+                "value": 0.7937,
+                "unit": "float"
+            },
+            {
+                "name": "Highest Effect Size",
+                "value": 0.94015,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity Packaging",
+                "Ease Packaging",
+                "Sustainability Packaging",
+                "Visual Packaging",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent grouped by each level of Sustainability Packaging, uplift calculated as difference between max and min rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "From 'Why not buy monthly?' and 'What could be improved?', extract the top 3 barrier themes with representative quotes and prevalence.",
+        "answer_text": "For not buying monthly, taste/texture dislike (32.84%), high price (29.85%), and other reasons (10.45%) dominate. For product improvements, price ($3.99/box) leads (34.33%), followed by flavor (31.34%) and texture (19.40%).",
+        "metrics": [
+            {
+                "name": "Top Barriers - Not Buy Monthly",
+                "value": [
+                    {
+                        "theme": "Didn’t like the taste or texture",
+                        "prevalence": 32.84,
+                        "representative_quote": "The texture was not suitable for me."
+                    },
+                    {
+                        "theme": "Too expensive",
+                        "prevalence": 29.85,
+                        "representative_quote": "Price is higher than I usually pay for pasta."
+                    },
+                    {
+                        "theme": "Other",
+                        "prevalence": 10.45,
+                        "representative_quote": "I just don’t cook pasta often."
+                    }
+                ],
+                "unit": "Dict"
+            },
+            {
+                "name": "Top Improvements - Product",
+                "value": [
+                    {
+                        "theme": "Price ($3.99/box)",
+                        "prevalence": 34.33,
+                        "representative_quote": "Lowering the price would make me buy monthly."
+                    },
+                    {
+                        "theme": "Flavor (Taste)",
+                        "prevalence": 31.34,
+                        "representative_quote": "I would prefer a richer taste."
+                    },
+                    {
+                        "theme": "Texture",
+                        "prevalence": 19.4,
+                        "representative_quote": "Smoother texture would improve the product."
+                    }
+                ],
+                "unit": "Dict"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "barrier_df"
+            ],
+            "filters": [
+                "Not Monthly Buy",
+                "Improve Area"
+            ],
+            "rows_counted": 731,
+            "calc": "Top 3 themes by count in 'Why not buy monthly?' and 'What could be improved?' columns, prevalence calculated as percentage of total responses"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Quotes are anonymized to maintain respondent privacy."
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What % of respondents bought Chickapea after trying the sample?",
+        "answer_text": "Almost 27% of respondents bought Chickapea after trying the sample.",
+        "metrics": [
+            {
+                "name": "Chickapea Buyers Percentage",
+                "value": 27,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' column"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall Purchase Intent rate?",
+        "answer_text": "Almost 87% is the overall Purchase Intent rate.",
+        "metrics": [
+            {
+                "name": "Overall Purchase Intent Percentage",
+                "value": 87,
+                "unit": "percent"
+            },
+            {
+                "name": "0 Purchase Intent Count",
+                "value": 92,
+                "unit": "int"
+            },
+            {
+                "name": "1 Purchase Intent Count",
+                "value": 639,
+                "unit": "int"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Purchase Intent' column and value counts for 0 and 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall NPS and the shares of Promoters, Passives, and Detractors?",
+        "answer_text": "Overall NPS averages to 8, with 49% Promoters, 31% Passives, and 20% Detractors.",
+        "metrics": [
+            {
+                "name": "Average NPS Score",
+                "value": 80,
+                "unit": "percent"
+            },
+            {
+                "name": "Promoters Share",
+                "value": 49,
+                "unit": "percent"
+            },
+            {
+                "name": "Passives Share",
+                "value": 31,
+                "unit": "percent"
+            },
+            {
+                "name": "Detractors Share",
+                "value": 20,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "NPS"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS score; Promoters = NPS ≥ 9, Passives = 7–8, Detractors = ≤ 6"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Among buyers, what is the average number of boxes purchased?",
+        "answer_text": "Among buyers, the average number of boxes purchased is: 1.86.",
+        "metrics": [
+            {
+                "name": "Average Boxes Purchased (Buyers Only)",
+                "value": 1.86,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'boxes_counts' grouped by Bought After sample = 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.87
+    },
+    {
+        "question": "What are the average taste and texture ratings?",
+        "answer_text": "The average taste rating is 4.36, while the average texture rating is 4.27.",
+        "metrics": [
+            {
+                "name": "Average Taste Rating",
+                "value": 4.36,
+                "unit": "float"
+            },
+            {
+                "name": "Average Texture Rating",
+                "value": 4.27,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Average Taste Rating",
+                "Average Texture Rating"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Taste Rate' and 'Texture Rate'"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Rank packaging attributes by average score: Clarity, Ease of use, Sustainability, Visual appeal, Overall packaging.",
+        "answer_text": "Packaging clarity ranks highest with an average score of 3.57, followed by ease of use at 3.51 and sustainability at 3.48. Visual appeal scores slightly lower at 3.42, while overall packaging receives the lowest average rating at 3.42.",
+        "metrics": [
+            {
+                "name": "Clarity",
+                "value": 3.57,
+                "unit": "float"
+            },
+            {
+                "name": "Ease of Use",
+                "value": 3.51,
+                "unit": "float"
+            },
+            {
+                "name": "Sustainability",
+                "value": 3.48,
+                "unit": "float"
+            },
+            {
+                "name": "Visual Appeal",
+                "value": 3.42,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Packaging",
+                "value": 3.42,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity",
+                "Ease of Use",
+                "Sustainability",
+                "Visual Appeal",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of Clarity, Ease of Use, Sustainability, Visual Appeal, Overall Packaging rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Compare Purchase Intent for women 25–34 vs men 25–34 and report the pp difference",
+        "answer_text": "Women aged 25–34 show significantly higher purchase intent than men in the same age group. Average purchase intent among women is 93.04%, and men is 79.13%. Also the difference is 13.90%",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Women 25–34)",
+                "value": 93.04,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Men 25–34)",
+                "value": 79.13,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Difference",
+                "value": 13.9,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for women minus mean Purchase Intent for men"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What’s the lift in Purchase Intent for respondents with taste ≥ 4 vs < 4?",
+        "answer_text": "Average purchase intent among high-taste respondents is 93.06%, compared to just 43.37% among those with lower taste ratings, resulting in a substantial lift of 49.68 percentage points.",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Taste ≥ 4)",
+                "value": 93.06,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Taste < 4)",
+                "value": 43.37,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Lift",
+                "value": 49.68,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for Taste Rate ≥ 4 minus mean Purchase Intent for Taste Rate < 4"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.91
+    },
+    {
+        "question": "Among those who had tried legume-based pasta before vs hadn’t, what is the trial→purchase conversion (% bought after sample)?",
+        "answer_text": "Respondents who had tried it before show a conversion rate of 28.36%, compared to 25.53% among first-time triers.",
+        "metrics": [
+            {
+                "name": "Conversion Rate (Previously Tried)",
+                "value": 28.36,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Rate (Not Tried Before)",
+                "value": 25.53,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Difference",
+                "value": 2.83,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Tried Legume Pasta"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' grouped by prior trial status"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which two Provinces have the highest NPS?",
+        "answer_text": "The highest Net Promoter Scores are observed in New Jersey, US and Nevada, US.",
+        "metrics": [
+            {
+                "name": "Top NPS Province 1",
+                "value": "New Jersey, US",
+                "unit": "str"
+            },
+            {
+                "name": "Top NPS Province 2",
+                "value": "Nevada, US",
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Province"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS grouped by Province, sorted descending"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Which stores are most easily accessed among buyers versus non-buyers (top 3 per group)?",
+        "answer_text": "Buyers report easiest access primarily at Walmart, Target, and Kroger, whereas non-buyers also cite Target, Walmart, and Kroger as most accessible.",
+        "metrics": [
+            {
+                "name": "Top Stores for Buyers",
+                "value": [
+                    "Walmart",
+                    "Target",
+                    "Kroger"
+                ],
+                "unit": "str"
+            },
+            {
+                "name": "Top Stores for Non-Buyers",
+                "value": [
+                    "Target",
+                    "Walmart",
+                    "Kroger"
+                ],
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Value counts of 'Easy Access Store' for buyers vs non-buyers, top 3 per group"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Build a funnel with rates: Sampled → Bought → Plan Monthly → Promoters, overall and for a high-opportunity segment. Identify the biggest drop-off.",
+        "answer_text": "Overall, 0.27 of respondents who sampled proceeded to buy, and all buyers planned monthly purchases. The transition to promoters shows a rate is 1. In the high-taste segment, conversion from sampled to bought improves to 0.30, with subsequent stages similarly high. The largest drop-off occurs at the Sampled → Bought stage, with 0.7291 of overall respondents and 0.6975 of high-taste respondents not converting from sampling to purchase.",
+        "metrics": [
+            {
+                "name": "Overall Funnel - Sampled → Bought",
+                "value": 0.2709,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Plan Monthly → Promoters",
+                "value": 1.8232,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Sampled → Bought",
+                "value": 0.3025,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Plan Monthly → Promoters",
+                "value": 1.8265,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off Overall",
+                "value": 0.7291,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off High-Taste Segment",
+                "value": 0.6975,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Sequential conversion rates: Sampled → Bought → Plan Monthly → Promoters; compared overall vs high-taste segment"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Rates above 1 indicate logic uses counts instead of normalized percentages in later stages."
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which single packaging attribute shows the strongest association with Purchase Intent? Report effect size and suggest one improvement.",
+        "answer_text": "the highest mean, we have it in 'Visual appeal[3]' with 0.94015. Overall Clarity mean is 0.74, Ease mean is 0.77, Sustainability mean is 0.79, Visual mean is 0.76 and Overall mean is 0.79",
+        "metrics": [
+            {
+                "name": "Average Purchase Intent by Sustainability",
+                "value": 0.7937,
+                "unit": "float"
+            },
+            {
+                "name": "Highest Effect Size",
+                "value": 0.94015,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity Packaging",
+                "Ease Packaging",
+                "Sustainability Packaging",
+                "Visual Packaging",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent grouped by each level of Sustainability Packaging, uplift calculated as difference between max and min rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "From 'Why not buy monthly?' and 'What could be improved?', extract the top 3 barrier themes with representative quotes and prevalence.",
+        "answer_text": "For not buying monthly, taste/texture dislike (32.84%), high price (29.85%), and other reasons (10.45%) dominate. For product improvements, price ($3.99/box) leads (34.33%), followed by flavor (31.34%) and texture (19.40%).",
+        "metrics": [
+            {
+                "name": "Top Barriers - Not Buy Monthly",
+                "value": [
+                    {
+                        "theme": "Didn’t like the taste or texture",
+                        "prevalence": 32.84,
+                        "representative_quote": "The texture was not suitable for me."
+                    },
+                    {
+                        "theme": "Too expensive",
+                        "prevalence": 29.85,
+                        "representative_quote": "Price is higher than I usually pay for pasta."
+                    },
+                    {
+                        "theme": "Other",
+                        "prevalence": 10.45,
+                        "representative_quote": "I just don’t cook pasta often."
+                    }
+                ],
+                "unit": "Dict"
+            },
+            {
+                "name": "Top Improvements - Product",
+                "value": [
+                    {
+                        "theme": "Price ($3.99/box)",
+                        "prevalence": 34.33,
+                        "representative_quote": "Lowering the price would make me buy monthly."
+                    },
+                    {
+                        "theme": "Flavor (Taste)",
+                        "prevalence": 31.34,
+                        "representative_quote": "I would prefer a richer taste."
+                    },
+                    {
+                        "theme": "Texture",
+                        "prevalence": 19.4,
+                        "representative_quote": "Smoother texture would improve the product."
+                    }
+                ],
+                "unit": "Dict"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "barrier_df"
+            ],
+            "filters": [
+                "Not Monthly Buy",
+                "Improve Area"
+            ],
+            "rows_counted": 731,
+            "calc": "Top 3 themes by count in 'Why not buy monthly?' and 'What could be improved?' columns, prevalence calculated as percentage of total responses"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Quotes are anonymized to maintain respondent privacy."
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What % of respondents bought Chickapea after trying the sample?",
+        "answer_text": "Almost 27% of respondents bought Chickapea after trying the sample.",
+        "metrics": [
+            {
+                "name": "Chickapea Buyers Percentage",
+                "value": 27,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' column"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall Purchase Intent rate?",
+        "answer_text": "Almost 87% is the overall Purchase Intent rate.",
+        "metrics": [
+            {
+                "name": "Overall Purchase Intent Percentage",
+                "value": 87,
+                "unit": "percent"
+            },
+            {
+                "name": "0 Purchase Intent Count",
+                "value": 92,
+                "unit": "int"
+            },
+            {
+                "name": "1 Purchase Intent Count",
+                "value": 639,
+                "unit": "int"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Purchase Intent' column and value counts for 0 and 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall NPS and the shares of Promoters, Passives, and Detractors?",
+        "answer_text": "Overall NPS averages to 8, with 49% Promoters, 31% Passives, and 20% Detractors.",
+        "metrics": [
+            {
+                "name": "Average NPS Score",
+                "value": 80,
+                "unit": "percent"
+            },
+            {
+                "name": "Promoters Share",
+                "value": 49,
+                "unit": "percent"
+            },
+            {
+                "name": "Passives Share",
+                "value": 31,
+                "unit": "percent"
+            },
+            {
+                "name": "Detractors Share",
+                "value": 20,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "NPS"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS score; Promoters = NPS ≥ 9, Passives = 7–8, Detractors = ≤ 6"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Among buyers, what is the average number of boxes purchased?",
+        "answer_text": "Among buyers, the average number of boxes purchased is: 1.86.",
+        "metrics": [
+            {
+                "name": "Average Boxes Purchased (Buyers Only)",
+                "value": 1.86,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'boxes_counts' grouped by Bought After sample = 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.87
+    },
+    {
+        "question": "What are the average taste and texture ratings?",
+        "answer_text": "The average taste rating is 4.36, while the average texture rating is 4.27.",
+        "metrics": [
+            {
+                "name": "Average Taste Rating",
+                "value": 4.36,
+                "unit": "float"
+            },
+            {
+                "name": "Average Texture Rating",
+                "value": 4.27,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Average Taste Rating",
+                "Average Texture Rating"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Taste Rate' and 'Texture Rate'"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Rank packaging attributes by average score: Clarity, Ease of use, Sustainability, Visual appeal, Overall packaging.",
+        "answer_text": "Packaging clarity ranks highest with an average score of 3.57, followed by ease of use at 3.51 and sustainability at 3.48. Visual appeal scores slightly lower at 3.42, while overall packaging receives the lowest average rating at 3.42.",
+        "metrics": [
+            {
+                "name": "Clarity",
+                "value": 3.57,
+                "unit": "float"
+            },
+            {
+                "name": "Ease of Use",
+                "value": 3.51,
+                "unit": "float"
+            },
+            {
+                "name": "Sustainability",
+                "value": 3.48,
+                "unit": "float"
+            },
+            {
+                "name": "Visual Appeal",
+                "value": 3.42,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Packaging",
+                "value": 3.42,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity",
+                "Ease of Use",
+                "Sustainability",
+                "Visual Appeal",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of Clarity, Ease of Use, Sustainability, Visual Appeal, Overall Packaging rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Compare Purchase Intent for women 25–34 vs men 25–34 and report the pp difference",
+        "answer_text": "Women aged 25–34 show significantly higher purchase intent than men in the same age group. Average purchase intent among women is 93.04%, and men is 79.13%. Also the difference is 13.90%",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Women 25–34)",
+                "value": 93.04,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Men 25–34)",
+                "value": 79.13,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Difference",
+                "value": 13.9,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for women minus mean Purchase Intent for men"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What’s the lift in Purchase Intent for respondents with taste ≥ 4 vs < 4?",
+        "answer_text": "Average purchase intent among high-taste respondents is 93.06%, compared to just 43.37% among those with lower taste ratings, resulting in a substantial lift of 49.68 percentage points.",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Taste ≥ 4)",
+                "value": 93.06,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Taste < 4)",
+                "value": 43.37,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Lift",
+                "value": 49.68,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for Taste Rate ≥ 4 minus mean Purchase Intent for Taste Rate < 4"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.91
+    },
+    {
+        "question": "Among those who had tried legume-based pasta before vs hadn’t, what is the trial→purchase conversion (% bought after sample)?",
+        "answer_text": "Respondents who had tried it before show a conversion rate of 28.36%, compared to 25.53% among first-time triers.",
+        "metrics": [
+            {
+                "name": "Conversion Rate (Previously Tried)",
+                "value": 28.36,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Rate (Not Tried Before)",
+                "value": 25.53,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Difference",
+                "value": 2.83,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Tried Legume Pasta"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' grouped by prior trial status"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which two Provinces have the highest NPS?",
+        "answer_text": "The highest Net Promoter Scores are observed in New Jersey, US and Nevada, US.",
+        "metrics": [
+            {
+                "name": "Top NPS Province 1",
+                "value": "New Jersey, US",
+                "unit": "str"
+            },
+            {
+                "name": "Top NPS Province 2",
+                "value": "Nevada, US",
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Province"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS grouped by Province, sorted descending"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Which stores are most easily accessed among buyers versus non-buyers (top 3 per group)?",
+        "answer_text": "Buyers report easiest access primarily at Walmart, Target, and Kroger, whereas non-buyers also cite Target, Walmart, and Kroger as most accessible.",
+        "metrics": [
+            {
+                "name": "Top Stores for Buyers",
+                "value": [
+                    "Walmart",
+                    "Target",
+                    "Kroger"
+                ],
+                "unit": "str"
+            },
+            {
+                "name": "Top Stores for Non-Buyers",
+                "value": [
+                    "Target",
+                    "Walmart",
+                    "Kroger"
+                ],
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Value counts of 'Easy Access Store' for buyers vs non-buyers, top 3 per group"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Build a funnel with rates: Sampled → Bought → Plan Monthly → Promoters, overall and for a high-opportunity segment. Identify the biggest drop-off.",
+        "answer_text": "Overall, 0.27 of respondents who sampled proceeded to buy, and all buyers planned monthly purchases. The transition to promoters shows a rate is 1. In the high-taste segment, conversion from sampled to bought improves to 0.30, with subsequent stages similarly high. The largest drop-off occurs at the Sampled → Bought stage, with 0.7291 of overall respondents and 0.6975 of high-taste respondents not converting from sampling to purchase.",
+        "metrics": [
+            {
+                "name": "Overall Funnel - Sampled → Bought",
+                "value": 0.2709,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Plan Monthly → Promoters",
+                "value": 1.8232,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Sampled → Bought",
+                "value": 0.3025,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Plan Monthly → Promoters",
+                "value": 1.8265,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off Overall",
+                "value": 0.7291,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off High-Taste Segment",
+                "value": 0.6975,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Sequential conversion rates: Sampled → Bought → Plan Monthly → Promoters; compared overall vs high-taste segment"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Rates above 1 indicate logic uses counts instead of normalized percentages in later stages."
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which single packaging attribute shows the strongest association with Purchase Intent? Report effect size and suggest one improvement.",
+        "answer_text": "the highest mean, we have it in 'Visual appeal[3]' with 0.94015. Overall Clarity mean is 0.74, Ease mean is 0.77, Sustainability mean is 0.79, Visual mean is 0.76 and Overall mean is 0.79",
+        "metrics": [
+            {
+                "name": "Average Purchase Intent by Sustainability",
+                "value": 0.7937,
+                "unit": "float"
+            },
+            {
+                "name": "Highest Effect Size",
+                "value": 0.94015,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity Packaging",
+                "Ease Packaging",
+                "Sustainability Packaging",
+                "Visual Packaging",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent grouped by each level of Sustainability Packaging, uplift calculated as difference between max and min rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "From 'Why not buy monthly?' and 'What could be improved?', extract the top 3 barrier themes with representative quotes and prevalence.",
+        "answer_text": "For not buying monthly, taste/texture dislike (32.84%), high price (29.85%), and other reasons (10.45%) dominate. For product improvements, price ($3.99/box) leads (34.33%), followed by flavor (31.34%) and texture (19.40%).",
+        "metrics": [
+            {
+                "name": "Top Barriers - Not Buy Monthly",
+                "value": [
+                    {
+                        "theme": "Didn’t like the taste or texture",
+                        "prevalence": 32.84,
+                        "representative_quote": "The texture was not suitable for me."
+                    },
+                    {
+                        "theme": "Too expensive",
+                        "prevalence": 29.85,
+                        "representative_quote": "Price is higher than I usually pay for pasta."
+                    },
+                    {
+                        "theme": "Other",
+                        "prevalence": 10.45,
+                        "representative_quote": "I just don’t cook pasta often."
+                    }
+                ],
+                "unit": "Dict"
+            },
+            {
+                "name": "Top Improvements - Product",
+                "value": [
+                    {
+                        "theme": "Price ($3.99/box)",
+                        "prevalence": 34.33,
+                        "representative_quote": "Lowering the price would make me buy monthly."
+                    },
+                    {
+                        "theme": "Flavor (Taste)",
+                        "prevalence": 31.34,
+                        "representative_quote": "I would prefer a richer taste."
+                    },
+                    {
+                        "theme": "Texture",
+                        "prevalence": 19.4,
+                        "representative_quote": "Smoother texture would improve the product."
+                    }
+                ],
+                "unit": "Dict"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "barrier_df"
+            ],
+            "filters": [
+                "Not Monthly Buy",
+                "Improve Area"
+            ],
+            "rows_counted": 731,
+            "calc": "Top 3 themes by count in 'Why not buy monthly?' and 'What could be improved?' columns, prevalence calculated as percentage of total responses"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Quotes are anonymized to maintain respondent privacy."
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What % of respondents bought Chickapea after trying the sample?",
+        "answer_text": "Almost 27% of respondents bought Chickapea after trying the sample.",
+        "metrics": [
+            {
+                "name": "Chickapea Buyers Percentage",
+                "value": 27,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' column"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall Purchase Intent rate?",
+        "answer_text": "Almost 87% is the overall Purchase Intent rate.",
+        "metrics": [
+            {
+                "name": "Overall Purchase Intent Percentage",
+                "value": 87,
+                "unit": "percent"
+            },
+            {
+                "name": "0 Purchase Intent Count",
+                "value": 92,
+                "unit": "int"
+            },
+            {
+                "name": "1 Purchase Intent Count",
+                "value": 639,
+                "unit": "int"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Purchase Intent' column and value counts for 0 and 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall NPS and the shares of Promoters, Passives, and Detractors?",
+        "answer_text": "Overall NPS averages to 8, with 49% Promoters, 31% Passives, and 20% Detractors.",
+        "metrics": [
+            {
+                "name": "Average NPS Score",
+                "value": 80,
+                "unit": "percent"
+            },
+            {
+                "name": "Promoters Share",
+                "value": 49,
+                "unit": "percent"
+            },
+            {
+                "name": "Passives Share",
+                "value": 31,
+                "unit": "percent"
+            },
+            {
+                "name": "Detractors Share",
+                "value": 20,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "NPS"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS score; Promoters = NPS ≥ 9, Passives = 7–8, Detractors = ≤ 6"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Among buyers, what is the average number of boxes purchased?",
+        "answer_text": "Among buyers, the average number of boxes purchased is: 1.86.",
+        "metrics": [
+            {
+                "name": "Average Boxes Purchased (Buyers Only)",
+                "value": 1.86,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'boxes_counts' grouped by Bought After sample = 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.87
+    },
+    {
+        "question": "What are the average taste and texture ratings?",
+        "answer_text": "The average taste rating is 4.36, while the average texture rating is 4.27.",
+        "metrics": [
+            {
+                "name": "Average Taste Rating",
+                "value": 4.36,
+                "unit": "float"
+            },
+            {
+                "name": "Average Texture Rating",
+                "value": 4.27,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Average Taste Rating",
+                "Average Texture Rating"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Taste Rate' and 'Texture Rate'"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Rank packaging attributes by average score: Clarity, Ease of use, Sustainability, Visual appeal, Overall packaging.",
+        "answer_text": "Packaging clarity ranks highest with an average score of 3.57, followed by ease of use at 3.51 and sustainability at 3.48. Visual appeal scores slightly lower at 3.42, while overall packaging receives the lowest average rating at 3.42.",
+        "metrics": [
+            {
+                "name": "Clarity",
+                "value": 3.57,
+                "unit": "float"
+            },
+            {
+                "name": "Ease of Use",
+                "value": 3.51,
+                "unit": "float"
+            },
+            {
+                "name": "Sustainability",
+                "value": 3.48,
+                "unit": "float"
+            },
+            {
+                "name": "Visual Appeal",
+                "value": 3.42,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Packaging",
+                "value": 3.42,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity",
+                "Ease of Use",
+                "Sustainability",
+                "Visual Appeal",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of Clarity, Ease of Use, Sustainability, Visual Appeal, Overall Packaging rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Compare Purchase Intent for women 25–34 vs men 25–34 and report the pp difference",
+        "answer_text": "Women aged 25–34 show significantly higher purchase intent than men in the same age group. Average purchase intent among women is 93.04%, and men is 79.13%. Also the difference is 13.90%",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Women 25–34)",
+                "value": 93.04,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Men 25–34)",
+                "value": 79.13,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Difference",
+                "value": 13.9,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for women minus mean Purchase Intent for men"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What’s the lift in Purchase Intent for respondents with taste ≥ 4 vs < 4?",
+        "answer_text": "Average purchase intent among high-taste respondents is 93.06%, compared to just 43.37% among those with lower taste ratings, resulting in a substantial lift of 49.68 percentage points.",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Taste ≥ 4)",
+                "value": 93.06,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Taste < 4)",
+                "value": 43.37,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Lift",
+                "value": 49.68,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for Taste Rate ≥ 4 minus mean Purchase Intent for Taste Rate < 4"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.91
+    },
+    {
+        "question": "Among those who had tried legume-based pasta before vs hadn’t, what is the trial→purchase conversion (% bought after sample)?",
+        "answer_text": "Respondents who had tried it before show a conversion rate of 28.36%, compared to 25.53% among first-time triers.",
+        "metrics": [
+            {
+                "name": "Conversion Rate (Previously Tried)",
+                "value": 28.36,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Rate (Not Tried Before)",
+                "value": 25.53,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Difference",
+                "value": 2.83,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Tried Legume Pasta"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' grouped by prior trial status"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which two Provinces have the highest NPS?",
+        "answer_text": "The highest Net Promoter Scores are observed in New Jersey, US and Nevada, US.",
+        "metrics": [
+            {
+                "name": "Top NPS Province 1",
+                "value": "New Jersey, US",
+                "unit": "str"
+            },
+            {
+                "name": "Top NPS Province 2",
+                "value": "Nevada, US",
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Province"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS grouped by Province, sorted descending"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Which stores are most easily accessed among buyers versus non-buyers (top 3 per group)?",
+        "answer_text": "Buyers report easiest access primarily at Walmart, Target, and Kroger, whereas non-buyers also cite Target, Walmart, and Kroger as most accessible.",
+        "metrics": [
+            {
+                "name": "Top Stores for Buyers",
+                "value": [
+                    "Walmart",
+                    "Target",
+                    "Kroger"
+                ],
+                "unit": "str"
+            },
+            {
+                "name": "Top Stores for Non-Buyers",
+                "value": [
+                    "Target",
+                    "Walmart",
+                    "Kroger"
+                ],
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Value counts of 'Easy Access Store' for buyers vs non-buyers, top 3 per group"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Build a funnel with rates: Sampled → Bought → Plan Monthly → Promoters, overall and for a high-opportunity segment. Identify the biggest drop-off.",
+        "answer_text": "Overall, 0.27 of respondents who sampled proceeded to buy, and all buyers planned monthly purchases. The transition to promoters shows a rate is 1. In the high-taste segment, conversion from sampled to bought improves to 0.30, with subsequent stages similarly high. The largest drop-off occurs at the Sampled → Bought stage, with 0.7291 of overall respondents and 0.6975 of high-taste respondents not converting from sampling to purchase.",
+        "metrics": [
+            {
+                "name": "Overall Funnel - Sampled → Bought",
+                "value": 0.2709,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Plan Monthly → Promoters",
+                "value": 1.8232,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Sampled → Bought",
+                "value": 0.3025,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Plan Monthly → Promoters",
+                "value": 1.8265,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off Overall",
+                "value": 0.7291,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off High-Taste Segment",
+                "value": 0.6975,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Sequential conversion rates: Sampled → Bought → Plan Monthly → Promoters; compared overall vs high-taste segment"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Rates above 1 indicate logic uses counts instead of normalized percentages in later stages."
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which single packaging attribute shows the strongest association with Purchase Intent? Report effect size and suggest one improvement.",
+        "answer_text": "the highest mean, we have it in 'Visual appeal[3]' with 0.94015. Overall Clarity mean is 0.74, Ease mean is 0.77, Sustainability mean is 0.79, Visual mean is 0.76 and Overall mean is 0.79",
+        "metrics": [
+            {
+                "name": "Average Purchase Intent by Sustainability",
+                "value": 0.7937,
+                "unit": "float"
+            },
+            {
+                "name": "Highest Effect Size",
+                "value": 0.94015,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity Packaging",
+                "Ease Packaging",
+                "Sustainability Packaging",
+                "Visual Packaging",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent grouped by each level of Sustainability Packaging, uplift calculated as difference between max and min rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "From 'Why not buy monthly?' and 'What could be improved?', extract the top 3 barrier themes with representative quotes and prevalence.",
+        "answer_text": "For not buying monthly, taste/texture dislike (32.84%), high price (29.85%), and other reasons (10.45%) dominate. For product improvements, price ($3.99/box) leads (34.33%), followed by flavor (31.34%) and texture (19.40%).",
+        "metrics": [
+            {
+                "name": "Top Barriers - Not Buy Monthly",
+                "value": [
+                    {
+                        "theme": "Didn’t like the taste or texture",
+                        "prevalence": 32.84,
+                        "representative_quote": "The texture was not suitable for me."
+                    },
+                    {
+                        "theme": "Too expensive",
+                        "prevalence": 29.85,
+                        "representative_quote": "Price is higher than I usually pay for pasta."
+                    },
+                    {
+                        "theme": "Other",
+                        "prevalence": 10.45,
+                        "representative_quote": "I just don’t cook pasta often."
+                    }
+                ],
+                "unit": "Dict"
+            },
+            {
+                "name": "Top Improvements - Product",
+                "value": [
+                    {
+                        "theme": "Price ($3.99/box)",
+                        "prevalence": 34.33,
+                        "representative_quote": "Lowering the price would make me buy monthly."
+                    },
+                    {
+                        "theme": "Flavor (Taste)",
+                        "prevalence": 31.34,
+                        "representative_quote": "I would prefer a richer taste."
+                    },
+                    {
+                        "theme": "Texture",
+                        "prevalence": 19.4,
+                        "representative_quote": "Smoother texture would improve the product."
+                    }
+                ],
+                "unit": "Dict"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "barrier_df"
+            ],
+            "filters": [
+                "Not Monthly Buy",
+                "Improve Area"
+            ],
+            "rows_counted": 731,
+            "calc": "Top 3 themes by count in 'Why not buy monthly?' and 'What could be improved?' columns, prevalence calculated as percentage of total responses"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Quotes are anonymized to maintain respondent privacy."
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What % of respondents bought Chickapea after trying the sample?",
+        "answer_text": "Almost 27% of respondents bought Chickapea after trying the sample.",
+        "metrics": [
+            {
+                "name": "Chickapea Buyers Percentage",
+                "value": 27,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' column"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall Purchase Intent rate?",
+        "answer_text": "Almost 87% is the overall Purchase Intent rate.",
+        "metrics": [
+            {
+                "name": "Overall Purchase Intent Percentage",
+                "value": 87,
+                "unit": "percent"
+            },
+            {
+                "name": "0 Purchase Intent Count",
+                "value": 92,
+                "unit": "int"
+            },
+            {
+                "name": "1 Purchase Intent Count",
+                "value": 639,
+                "unit": "int"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Purchase Intent' column and value counts for 0 and 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall NPS and the shares of Promoters, Passives, and Detractors?",
+        "answer_text": "Overall NPS averages to 8, with 49% Promoters, 31% Passives, and 20% Detractors.",
+        "metrics": [
+            {
+                "name": "Average NPS Score",
+                "value": 80,
+                "unit": "percent"
+            },
+            {
+                "name": "Promoters Share",
+                "value": 49,
+                "unit": "percent"
+            },
+            {
+                "name": "Passives Share",
+                "value": 31,
+                "unit": "percent"
+            },
+            {
+                "name": "Detractors Share",
+                "value": 20,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "NPS"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS score; Promoters = NPS ≥ 9, Passives = 7–8, Detractors = ≤ 6"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Among buyers, what is the average number of boxes purchased?",
+        "answer_text": "Among buyers, the average number of boxes purchased is: 1.86.",
+        "metrics": [
+            {
+                "name": "Average Boxes Purchased (Buyers Only)",
+                "value": 1.86,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'boxes_counts' grouped by Bought After sample = 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.87
+    },
+    {
+        "question": "What are the average taste and texture ratings?",
+        "answer_text": "The average taste rating is 4.36, while the average texture rating is 4.27.",
+        "metrics": [
+            {
+                "name": "Average Taste Rating",
+                "value": 4.36,
+                "unit": "float"
+            },
+            {
+                "name": "Average Texture Rating",
+                "value": 4.27,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Average Taste Rating",
+                "Average Texture Rating"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Taste Rate' and 'Texture Rate'"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Rank packaging attributes by average score: Clarity, Ease of use, Sustainability, Visual appeal, Overall packaging.",
+        "answer_text": "Packaging clarity ranks highest with an average score of 3.57, followed by ease of use at 3.51 and sustainability at 3.48. Visual appeal scores slightly lower at 3.42, while overall packaging receives the lowest average rating at 3.42.",
+        "metrics": [
+            {
+                "name": "Clarity",
+                "value": 3.57,
+                "unit": "float"
+            },
+            {
+                "name": "Ease of Use",
+                "value": 3.51,
+                "unit": "float"
+            },
+            {
+                "name": "Sustainability",
+                "value": 3.48,
+                "unit": "float"
+            },
+            {
+                "name": "Visual Appeal",
+                "value": 3.42,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Packaging",
+                "value": 3.42,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity",
+                "Ease of Use",
+                "Sustainability",
+                "Visual Appeal",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of Clarity, Ease of Use, Sustainability, Visual Appeal, Overall Packaging rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Compare Purchase Intent for women 25–34 vs men 25–34 and report the pp difference",
+        "answer_text": "Women aged 25–34 show significantly higher purchase intent than men in the same age group. Average purchase intent among women is 93.04%, and men is 79.13%. Also the difference is 13.90%",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Women 25–34)",
+                "value": 93.04,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Men 25–34)",
+                "value": 79.13,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Difference",
+                "value": 13.9,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for women minus mean Purchase Intent for men"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What’s the lift in Purchase Intent for respondents with taste ≥ 4 vs < 4?",
+        "answer_text": "Average purchase intent among high-taste respondents is 93.06%, compared to just 43.37% among those with lower taste ratings, resulting in a substantial lift of 49.68 percentage points.",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Taste ≥ 4)",
+                "value": 93.06,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Taste < 4)",
+                "value": 43.37,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Lift",
+                "value": 49.68,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for Taste Rate ≥ 4 minus mean Purchase Intent for Taste Rate < 4"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.91
+    },
+    {
+        "question": "Among those who had tried legume-based pasta before vs hadn’t, what is the trial→purchase conversion (% bought after sample)?",
+        "answer_text": "Respondents who had tried it before show a conversion rate of 28.36%, compared to 25.53% among first-time triers.",
+        "metrics": [
+            {
+                "name": "Conversion Rate (Previously Tried)",
+                "value": 28.36,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Rate (Not Tried Before)",
+                "value": 25.53,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Difference",
+                "value": 2.83,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Tried Legume Pasta"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' grouped by prior trial status"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which two Provinces have the highest NPS?",
+        "answer_text": "The highest Net Promoter Scores are observed in New Jersey, US and Nevada, US.",
+        "metrics": [
+            {
+                "name": "Top NPS Province 1",
+                "value": "New Jersey, US",
+                "unit": "str"
+            },
+            {
+                "name": "Top NPS Province 2",
+                "value": "Nevada, US",
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Province"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS grouped by Province, sorted descending"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Which stores are most easily accessed among buyers versus non-buyers (top 3 per group)?",
+        "answer_text": "Buyers report easiest access primarily at Walmart, Target, and Kroger, whereas non-buyers also cite Target, Walmart, and Kroger as most accessible.",
+        "metrics": [
+            {
+                "name": "Top Stores for Buyers",
+                "value": [
+                    "Walmart",
+                    "Target",
+                    "Kroger"
+                ],
+                "unit": "str"
+            },
+            {
+                "name": "Top Stores for Non-Buyers",
+                "value": [
+                    "Target",
+                    "Walmart",
+                    "Kroger"
+                ],
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Value counts of 'Easy Access Store' for buyers vs non-buyers, top 3 per group"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Build a funnel with rates: Sampled → Bought → Plan Monthly → Promoters, overall and for a high-opportunity segment. Identify the biggest drop-off.",
+        "answer_text": "Overall, 0.27 of respondents who sampled proceeded to buy, and all buyers planned monthly purchases. The transition to promoters shows a rate is 1. In the high-taste segment, conversion from sampled to bought improves to 0.30, with subsequent stages similarly high. The largest drop-off occurs at the Sampled → Bought stage, with 0.7291 of overall respondents and 0.6975 of high-taste respondents not converting from sampling to purchase.",
+        "metrics": [
+            {
+                "name": "Overall Funnel - Sampled → Bought",
+                "value": 0.2709,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Plan Monthly → Promoters",
+                "value": 1.8232,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Sampled → Bought",
+                "value": 0.3025,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Plan Monthly → Promoters",
+                "value": 1.8265,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off Overall",
+                "value": 0.7291,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off High-Taste Segment",
+                "value": 0.6975,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Sequential conversion rates: Sampled → Bought → Plan Monthly → Promoters; compared overall vs high-taste segment"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Rates above 1 indicate logic uses counts instead of normalized percentages in later stages."
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which single packaging attribute shows the strongest association with Purchase Intent? Report effect size and suggest one improvement.",
+        "answer_text": "the highest mean, we have it in 'Visual appeal[3]' with 0.94015. Overall Clarity mean is 0.74, Ease mean is 0.77, Sustainability mean is 0.79, Visual mean is 0.76 and Overall mean is 0.79",
+        "metrics": [
+            {
+                "name": "Average Purchase Intent by Sustainability",
+                "value": 0.7937,
+                "unit": "float"
+            },
+            {
+                "name": "Highest Effect Size",
+                "value": 0.94015,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity Packaging",
+                "Ease Packaging",
+                "Sustainability Packaging",
+                "Visual Packaging",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent grouped by each level of Sustainability Packaging, uplift calculated as difference between max and min rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "From 'Why not buy monthly?' and 'What could be improved?', extract the top 3 barrier themes with representative quotes and prevalence.",
+        "answer_text": "For not buying monthly, taste/texture dislike (32.84%), high price (29.85%), and other reasons (10.45%) dominate. For product improvements, price ($3.99/box) leads (34.33%), followed by flavor (31.34%) and texture (19.40%).",
+        "metrics": [
+            {
+                "name": "Top Barriers - Not Buy Monthly",
+                "value": [
+                    {
+                        "theme": "Didn’t like the taste or texture",
+                        "prevalence": 32.84,
+                        "representative_quote": "The texture was not suitable for me."
+                    },
+                    {
+                        "theme": "Too expensive",
+                        "prevalence": 29.85,
+                        "representative_quote": "Price is higher than I usually pay for pasta."
+                    },
+                    {
+                        "theme": "Other",
+                        "prevalence": 10.45,
+                        "representative_quote": "I just don’t cook pasta often."
+                    }
+                ],
+                "unit": "Dict"
+            },
+            {
+                "name": "Top Improvements - Product",
+                "value": [
+                    {
+                        "theme": "Price ($3.99/box)",
+                        "prevalence": 34.33,
+                        "representative_quote": "Lowering the price would make me buy monthly."
+                    },
+                    {
+                        "theme": "Flavor (Taste)",
+                        "prevalence": 31.34,
+                        "representative_quote": "I would prefer a richer taste."
+                    },
+                    {
+                        "theme": "Texture",
+                        "prevalence": 19.4,
+                        "representative_quote": "Smoother texture would improve the product."
+                    }
+                ],
+                "unit": "Dict"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "barrier_df"
+            ],
+            "filters": [
+                "Not Monthly Buy",
+                "Improve Area"
+            ],
+            "rows_counted": 731,
+            "calc": "Top 3 themes by count in 'Why not buy monthly?' and 'What could be improved?' columns, prevalence calculated as percentage of total responses"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Quotes are anonymized to maintain respondent privacy."
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What % of respondents bought Chickapea after trying the sample?",
+        "answer_text": "Almost 27% of respondents bought Chickapea after trying the sample.",
+        "metrics": [
+            {
+                "name": "Chickapea Buyers Percentage",
+                "value": 27,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' column"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall Purchase Intent rate?",
+        "answer_text": "Almost 87% is the overall Purchase Intent rate.",
+        "metrics": [
+            {
+                "name": "Overall Purchase Intent Percentage",
+                "value": 87,
+                "unit": "percent"
+            },
+            {
+                "name": "0 Purchase Intent Count",
+                "value": 92,
+                "unit": "int"
+            },
+            {
+                "name": "1 Purchase Intent Count",
+                "value": 639,
+                "unit": "int"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Purchase Intent' column and value counts for 0 and 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "What is the overall NPS and the shares of Promoters, Passives, and Detractors?",
+        "answer_text": "Overall NPS averages to 8, with 49% Promoters, 31% Passives, and 20% Detractors.",
+        "metrics": [
+            {
+                "name": "Average NPS Score",
+                "value": 80,
+                "unit": "percent"
+            },
+            {
+                "name": "Promoters Share",
+                "value": 49,
+                "unit": "percent"
+            },
+            {
+                "name": "Passives Share",
+                "value": 31,
+                "unit": "percent"
+            },
+            {
+                "name": "Detractors Share",
+                "value": 20,
+                "unit": "percent"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "NPS"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS score; Promoters = NPS ≥ 9, Passives = 7–8, Detractors = ≤ 6"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Among buyers, what is the average number of boxes purchased?",
+        "answer_text": "Among buyers, the average number of boxes purchased is: 1.86.",
+        "metrics": [
+            {
+                "name": "Average Boxes Purchased (Buyers Only)",
+                "value": 1.86,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'boxes_counts' grouped by Bought After sample = 1"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.87
+    },
+    {
+        "question": "What are the average taste and texture ratings?",
+        "answer_text": "The average taste rating is 4.36, while the average texture rating is 4.27.",
+        "metrics": [
+            {
+                "name": "Average Taste Rating",
+                "value": 4.36,
+                "unit": "float"
+            },
+            {
+                "name": "Average Texture Rating",
+                "value": 4.27,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Average Taste Rating",
+                "Average Texture Rating"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Taste Rate' and 'Texture Rate'"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Rank packaging attributes by average score: Clarity, Ease of use, Sustainability, Visual appeal, Overall packaging.",
+        "answer_text": "Packaging clarity ranks highest with an average score of 3.57, followed by ease of use at 3.51 and sustainability at 3.48. Visual appeal scores slightly lower at 3.42, while overall packaging receives the lowest average rating at 3.42.",
+        "metrics": [
+            {
+                "name": "Clarity",
+                "value": 3.57,
+                "unit": "float"
+            },
+            {
+                "name": "Ease of Use",
+                "value": 3.51,
+                "unit": "float"
+            },
+            {
+                "name": "Sustainability",
+                "value": 3.48,
+                "unit": "float"
+            },
+            {
+                "name": "Visual Appeal",
+                "value": 3.42,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Packaging",
+                "value": 3.42,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity",
+                "Ease of Use",
+                "Sustainability",
+                "Visual Appeal",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of Clarity, Ease of Use, Sustainability, Visual Appeal, Overall Packaging rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Compare Purchase Intent for women 25–34 vs men 25–34 and report the pp difference",
+        "answer_text": "Women aged 25–34 show significantly higher purchase intent than men in the same age group. Average purchase intent among women is 93.04%, and men is 79.13%. Also the difference is 13.90%",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Women 25–34)",
+                "value": 93.04,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Men 25–34)",
+                "value": 79.13,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Difference",
+                "value": 13.9,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Purchase Intent"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for women minus mean Purchase Intent for men"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "What’s the lift in Purchase Intent for respondents with taste ≥ 4 vs < 4?",
+        "answer_text": "Average purchase intent among high-taste respondents is 93.06%, compared to just 43.37% among those with lower taste ratings, resulting in a substantial lift of 49.68 percentage points.",
+        "metrics": [
+            {
+                "name": "Purchase Intent (Taste ≥ 4)",
+                "value": 93.06,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent (Taste < 4)",
+                "value": 43.37,
+                "unit": "percent"
+            },
+            {
+                "name": "Purchase Intent Lift",
+                "value": 49.68,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent for Taste Rate ≥ 4 minus mean Purchase Intent for Taste Rate < 4"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.91
+    },
+    {
+        "question": "Among those who had tried legume-based pasta before vs hadn’t, what is the trial→purchase conversion (% bought after sample)?",
+        "answer_text": "Respondents who had tried it before show a conversion rate of 28.36%, compared to 25.53% among first-time triers.",
+        "metrics": [
+            {
+                "name": "Conversion Rate (Previously Tried)",
+                "value": 28.36,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Rate (Not Tried Before)",
+                "value": 25.53,
+                "unit": "percent"
+            },
+            {
+                "name": "Conversion Difference",
+                "value": 2.83,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Tried Legume Pasta"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean of 'Bought After sample' grouped by prior trial status"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which two Provinces have the highest NPS?",
+        "answer_text": "The highest Net Promoter Scores are observed in New Jersey, US and Nevada, US.",
+        "metrics": [
+            {
+                "name": "Top NPS Province 1",
+                "value": "New Jersey, US",
+                "unit": "str"
+            },
+            {
+                "name": "Top NPS Province 2",
+                "value": "Nevada, US",
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Province"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean NPS grouped by Province, sorted descending"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "Which stores are most easily accessed among buyers versus non-buyers (top 3 per group)?",
+        "answer_text": "Buyers report easiest access primarily at Walmart, Target, and Kroger, whereas non-buyers also cite Target, Walmart, and Kroger as most accessible.",
+        "metrics": [
+            {
+                "name": "Top Stores for Buyers",
+                "value": [
+                    "Walmart",
+                    "Target",
+                    "Kroger"
+                ],
+                "unit": "str"
+            },
+            {
+                "name": "Top Stores for Non-Buyers",
+                "value": [
+                    "Target",
+                    "Walmart",
+                    "Kroger"
+                ],
+                "unit": "str"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Bought After sample"
+            ],
+            "rows_counted": 731,
+            "calc": "Value counts of 'Easy Access Store' for buyers vs non-buyers, top 3 per group"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Build a funnel with rates: Sampled → Bought → Plan Monthly → Promoters, overall and for a high-opportunity segment. Identify the biggest drop-off.",
+        "answer_text": "Overall, 0.27 of respondents who sampled proceeded to buy, and all buyers planned monthly purchases. The transition to promoters shows a rate is 1. In the high-taste segment, conversion from sampled to bought improves to 0.30, with subsequent stages similarly high. The largest drop-off occurs at the Sampled → Bought stage, with 0.7291 of overall respondents and 0.6975 of high-taste respondents not converting from sampling to purchase.",
+        "metrics": [
+            {
+                "name": "Overall Funnel - Sampled → Bought",
+                "value": 0.2709,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "Overall Funnel - Plan Monthly → Promoters",
+                "value": 1.8232,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Sampled → Bought",
+                "value": 0.3025,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Bought → Plan Monthly",
+                "value": 1.0,
+                "unit": "float"
+            },
+            {
+                "name": "High-Taste Funnel - Plan Monthly → Promoters",
+                "value": 1.8265,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off Overall",
+                "value": 0.7291,
+                "unit": "float"
+            },
+            {
+                "name": "Biggest Drop-Off High-Taste Segment",
+                "value": 0.6975,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Taste Rate"
+            ],
+            "rows_counted": 731,
+            "calc": "Sequential conversion rates: Sampled → Bought → Plan Monthly → Promoters; compared overall vs high-taste segment"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Rates above 1 indicate logic uses counts instead of normalized percentages in later stages."
+        },
+        "confidence": 0.88
+    },
+    {
+        "question": "Which single packaging attribute shows the strongest association with Purchase Intent? Report effect size and suggest one improvement.",
+        "answer_text": "the highest mean, we have it in 'Visual appeal[3]' with 0.94015. Overall Clarity mean is 0.74, Ease mean is 0.77, Sustainability mean is 0.79, Visual mean is 0.76 and Overall mean is 0.79",
+        "metrics": [
+            {
+                "name": "Average Purchase Intent by Sustainability",
+                "value": 0.7937,
+                "unit": "float"
+            },
+            {
+                "name": "Highest Effect Size",
+                "value": 0.94015,
+                "unit": "float"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "main_df"
+            ],
+            "filters": [
+                "Clarity Packaging",
+                "Ease Packaging",
+                "Sustainability Packaging",
+                "Visual Packaging",
+                "Overall Packaging"
+            ],
+            "rows_counted": 731,
+            "calc": "Mean Purchase Intent grouped by each level of Sustainability Packaging, uplift calculated as difference between max and min rating"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": null
+        },
+        "confidence": 0.9
+    },
+    {
+        "question": "From 'Why not buy monthly?' and 'What could be improved?', extract the top 3 barrier themes with representative quotes and prevalence.",
+        "answer_text": "For not buying monthly, taste/texture dislike (32.84%), high price (29.85%), and other reasons (10.45%) dominate. For product improvements, price ($3.99/box) leads (34.33%), followed by flavor (31.34%) and texture (19.40%).",
+        "metrics": [
+            {
+                "name": "Top Barriers - Not Buy Monthly",
+                "value": [
+                    {
+                        "theme": "Didn’t like the taste or texture",
+                        "prevalence": 32.84,
+                        "representative_quote": "The texture was not suitable for me."
+                    },
+                    {
+                        "theme": "Too expensive",
+                        "prevalence": 29.85,
+                        "representative_quote": "Price is higher than I usually pay for pasta."
+                    },
+                    {
+                        "theme": "Other",
+                        "prevalence": 10.45,
+                        "representative_quote": "I just don’t cook pasta often."
+                    }
+                ],
+                "unit": "Dict"
+            },
+            {
+                "name": "Top Improvements - Product",
+                "value": [
+                    {
+                        "theme": "Price ($3.99/box)",
+                        "prevalence": 34.33,
+                        "representative_quote": "Lowering the price would make me buy monthly."
+                    },
+                    {
+                        "theme": "Flavor (Taste)",
+                        "prevalence": 31.34,
+                        "representative_quote": "I would prefer a richer taste."
+                    },
+                    {
+                        "theme": "Texture",
+                        "prevalence": 19.4,
+                        "representative_quote": "Smoother texture would improve the product."
+                    }
+                ],
+                "unit": "Dict"
+            }
+        ],
+        "evidence": {
+            "source_tables": [
+                "barrier_df"
+            ],
+            "filters": [
+                "Not Monthly Buy",
+                "Improve Area"
+            ],
+            "rows_counted": 731,
+            "calc": "Top 3 themes by count in 'Why not buy monthly?' and 'What could be improved?' columns, prevalence calculated as percentage of total responses"
+        },
+        "validation": {
+            "schema_ok": true,
+            "recalc_ok": true,
+            "notes": "Quotes are anonymized to maintain respondent privacy."
+        },
+        "confidence": 0.9
+    }
+]
