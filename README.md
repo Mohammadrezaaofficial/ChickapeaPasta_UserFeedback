@@ -14,5 +14,6 @@ I will:
 - (C) build a **reporting agent** that answers marketer questions **only from the cleaned data**.
 - (D) Report the answering datas as json file
 - (E) Create a Mysql dataset on answering datas
+- (F) Create PDF and Powerpoint file on answering datas
 
 Thanks for attention
